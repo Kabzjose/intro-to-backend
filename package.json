@@ -1,0 +1,19 @@
+{
+  "name": "intro-to-backend",
+  "version": "1.0.0",
+  "description": "into to backend",
+  "license": "ISC",
+  "author": "Jose kabz",
+  "type": "module",
+  "main": "backend/src/index.js",
+  "scripts": {
+    "start": "node backend/src/index.js",
+    "dev": "nodemon backend/src/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongoose": "^9.1.2",
+    "nodemon": "^3.1.11"
+  }
+}

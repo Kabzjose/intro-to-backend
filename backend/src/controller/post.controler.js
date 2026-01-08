@@ -59,4 +59,22 @@ const updatePost=async(req,res)=>{
     })
 }
 }
-export {createPost, getPosts, updatePost};
+
+//declare exports
+const deletePost=async (req,res)=>{
+    try{
+        const deleted= await Post.findByIdAndDelete
+        (req.params.id);
+        if(!deleted){
+            return res.status(404).json({message:"Post not found"});
+        }
+        res.status(200).json({
+            message:"Post deleted successfully",
+            deleted
+        });
+    }catch(error){
+
+    }
+}
+
+export {createPost, getPosts, updatePost, deletePost};

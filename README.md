@@ -6,3 +6,6 @@ dependencies
     mongoose: connects to mongodb
     nodemon: automates server starting
     bcrypt: for comparing passwords
+
+    Added Authentication APIs
+    Added CRUD APIs

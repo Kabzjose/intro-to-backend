@@ -1,5 +1,7 @@
 import { User } from "../models/user.model.js";
 
+//console.log("REGISTER HIT", req.body);
+
 const registerUser= async (req,res) =>{
     try{
         const {username,email,password}= req.body;
@@ -24,6 +26,7 @@ const registerUser= async (req,res) =>{
             email:user.email,username:user.username
         });
     }catch(error){
+        console.error("REGISTER ERROR:", error);
          res.status(500).json ({message:"Server error"})
     }
 }
@@ -47,7 +50,10 @@ const logInUser= async (req,res) =>{
     username:user.username
 });
     }catch(error){  
-        res.status(500).json({message:"Server error"});
+        console.error("REGISTER ERROR:", error);
+        res.status(500).json({message:"Server error",
+    error:error.message
+        });
 }
 }
 export {registerUser, logInUser};

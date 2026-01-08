@@ -21,4 +21,19 @@ const createPost= async(req,res)=>{
     }
 }
 
-export {createPost};
+//get all posts
+const getPosts=async(req,res)=>{
+    try{
+        const getPosts=await Post.find();
+        res.status(200).json({
+            message:"Posts fetched successfully",
+            getPosts
+        });
+
+    }catch(error){
+        console.error("Error fetching posts:", error);
+  res.status(500).json({message:"internal server error"
+    }
+)}
+}
+export {createPost, getPosts};

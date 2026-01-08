@@ -1,8 +1,8 @@
-import { User } from "../models/user.model";
+import { User } from "../models/user.model.js";
 
 const registerUser= async (req,res) =>{
     try{
-        const {usernane,email,password}= req.body;
+        const {username,email,password}= req.body;
         //basic validation
         if(!username || !email || !password){
             return res.status(400).json({message:"All fields are required"});
@@ -24,7 +24,7 @@ const registerUser= async (req,res) =>{
             email:user.email,username:user.username
         });
     }catch(error){
-         res.satus(500).json ({message:"Server error"})
+         res.status(500).json ({message:"Server error"})
     }
 }
 export {registerUser};

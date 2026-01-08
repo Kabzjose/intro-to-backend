@@ -31,11 +31,11 @@ const userSchema= new Schema(
 )
 
 //hashing password before saving to database
-userSchema.pre("save", async function (next) {
-    if(!this.isModified("password")) return next(); //if password is not modified we dont hash again
+userSchema.pre("save", async function () {
+    if(!this.isModified("password")) return ; //if password is not modified we dont hash again
         
        this.password= await bcrypt.hash(this.password,10); 
-         next();
+         
     
 });
 //method to compare password during login

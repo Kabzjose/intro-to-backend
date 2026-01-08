@@ -5,3 +5,4 @@ dependencies
     express: for creating routes
     mongoose: connects to mongodb
     nodemon: automates server starting
+    bcrypt: for comparing passwords

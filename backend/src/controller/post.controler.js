@@ -60,7 +60,7 @@ const updatePost=async(req,res)=>{
 }
 }
 
-//declare exports
+//delete exports
 const deletePost=async (req,res)=>{
     try{
         const deleted= await Post.findByIdAndDelete
